@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 import * as UserService from "../../services/UserService/UserService";
 
-export const getAllUsers = async (_req: Request, res: Response
-) => {
+export const getAllUsers = async (_req: Request, res: Response) => {
     try {
         const users = await UserService.getAllUsers();
         return res.status(200).json(users);

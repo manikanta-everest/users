@@ -1,12 +1,21 @@
 import { User } from "../../database/models/UserModel";
 
 export const getAllUsers = async () => {
-    const data=  await User.findAll();
-    console.log("sevice",data)
-  return data;
+  try {
+    const data = await User.findAll();
+    return data;
+  } catch (e) {
+    console.log("error", e);
+    throw e;
+  }
 };
 
 export const createUser = async (data: User) => {
-const userdata= await User.create(data);
-  return userdata 
+  try {
+    const userdata = await User.create(data);
+    return userdata
+  } catch (e) {
+    console.log("error", e)
+    throw e;
+  }
 };
