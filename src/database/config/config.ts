@@ -15,7 +15,7 @@ const config: Record<string, any>= {
     "username": process.env.DB_USER as string,
     "password": process.env.DB_PASSWORD as string,
     "database": process.env.DB_NAME as string,
-    "host": "localhost",
+    "host": process.env.DB_HOST as string,
     "dialect": 'postgres'
   },
   "test": {
@@ -26,10 +26,10 @@ const config: Record<string, any>= {
     "dialect": 'postgres'
   },
   "production": {
-    "username": process.env.PROD_DB_USER as string,
-    "password": process.env.PROD_DB_PASSWORD as string,
-    "database": process.env.PROD_DB_NAME as string,
-    "host": process.env.PROD_DB_HOST as string,
+    "username": process.env.DB_USER as string,
+    "password": process.env.DB_PASSWORD as string,
+    "database": process.env.DB_NAME as string,
+    "host": process.env.DB_HOST as string,
     "dialect": 'postgres',
     "port": 5432,
     "dialectOptions": {
