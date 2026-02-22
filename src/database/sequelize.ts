@@ -12,6 +12,7 @@ const sequelize = new Sequelize(
     host: dbConfig.host,
     dialect: dbConfig.dialect as any,
     logging: false,
+    ...(dbConfig.port &&{port:dbConfig.port}),...(dbConfig.dialectOptions &&{dialectOptions:dbConfig.dialectOptions}),
   }
 );
 
